@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Szczegóły todo</title>
+</head>
+<body>
+    <h2> Zmień: </h2>
+    <form method="POST" action="/todos/{{ todo_id }}/">
+        {{ form.hidden_tag() }}
+        <table>
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                <tr>
+                    <th>{{ field.label }} {% if field.flags.required %}*{% endif %}</th>
+                    <td>{{ field }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+        <input type="submit" name="Zmien" value="Zmien">
+
+ <input type="submit" name="Usun" value="Usun">
+        <p></p>
+</form>
+<form method="POST" action="/todos/{{ todo_id }}/">
+    <input type="submit" name="Cofaj" value="Cofaj">
+</form>
+</body>
+</html>
