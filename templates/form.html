@@ -1,0 +1,22 @@
+<h1>Witamy w formularzu!</h1>
+<h3>Oblicz kwotę PLN jaką otrzymasz po aktualnym kursie:</h3>
+
+{% if currency %}
+<label for="cars">Proszę wybrać walutę</label>
+
+<form class="form-inline" method="POST" action="">
+<select name="curr" id="curr">
+    {% for c in currency %}
+  <option value="{{ c.currency }}">{{ c.currency  }}</option>
+{% endfor %}
+</select>
+{% endif %}
+
+<label>Kwota</label>
+ <input name="curr_value"/>
+
+ </div>
+    <button type="submit" class="btn btn-default">Przelicz</button>
+  </div>
+
+</form>
